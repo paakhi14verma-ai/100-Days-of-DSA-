@@ -1,0 +1,50 @@
+//Problem: Read a string and check if it is a palindrome using two-pointer comparison.
+
+//Input:
+//- Single line: strings
+
+//Output:
+//- Print YES if palindrome, otherwise NO
+
+//Example:
+//Input:
+//level
+
+//Output:
+//YES
+
+//Explanation: String reads same forwards and backwards
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char s[100];
+    int left, right, flag = 1;
+
+    printf("Enter a string: ");
+    scanf("%s", s);
+
+    left = 0;
+    right = strlen(s) - 1;
+
+    while (left < right)
+    {
+        if (s[left] != s[right])
+        {
+            flag = 0;
+            break;
+        }
+        left++;
+        right--;
+    }
+
+    if (flag == 1)
+        printf("YES");
+    else
+        printf("NO");
+
+    return 0;
+}
